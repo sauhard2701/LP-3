@@ -174,4 +174,3 @@ plt.title('Relative importance of attributes')
 # Plot the heatmap
 sns.heatmap(data=relative_imp, annot=True, fmt='.2f', cmap='RdYlGn')
 plt.show()
-#-----------------------------#
