@@ -11,10 +11,9 @@ def fractionalKnapsack(W, arr):
 	# sorting Item on basis of ratio
 	arr.sort(key=lambda x: (x.value/x.weight), reverse=True)
 
-	# Uncomment to see new order of Items with their
-	# ratio
+	# Uncomment to see new order of Items with their ratio
 	for item in arr:
-		 print(item.value, item.weight, round(item.value/item.weight,3))
+		print(item.value, item.weight, round(item.value/item.weight,3))
 
 	# Result(value in Knapsack)
 	finalvalue = 0.0
@@ -27,11 +26,11 @@ def fractionalKnapsack(W, arr):
 			W -= item.weight
 			finalvalue += item.value
 
-		# If we can't add current Item, add fractional part
-		# of it
+		# If we can't add current Item, add fractional part of it
 		else:
 			finalvalue += item.value * W / item.weight
 			break
+		
 	# Returning final value
 	return finalvalue
 
@@ -43,6 +42,5 @@ if __name__ == "__main__":
     arr = [Item(10, 20), Item(20, 30), Item(30, 66), Item(40,40), Item(50,60)]
 
 	# Function call
-    max_val = fractionalKnapsack(W, arr)
     print("Knapsack Capacity:", W)
-    print ('Maximum value we can obtain = {}'.format(max_val))
+    print ("Maximum Profit:",fractionalKnapsack(W, arr))
