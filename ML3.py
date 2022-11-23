@@ -36,8 +36,8 @@ print("The shape of y_train is:",y_train.shape)
 print("The shape of y_test is:",y_test.shape)
 #-----------------------------#
 #importing packages
-from sklearn.metrics import accuracy_score
-import sklearn.metrics as metrics
+
+
 from sklearn.metrics import classification_report, confusion_matrix, ConfusionMatrixDisplay
 from sklearn.neighbors import KNeighborsClassifier 
 #-----------------------------#
@@ -61,7 +61,7 @@ tn, fp, fn, tp = confusion_matrix(y_test, y_test_knn).ravel()
 accuracy  =(tp+tn)/(tp+tn+fp+fn)
 precision =(tp)/(tp+fp)
 recall  =(tp)/(tp+fn)
-f1 =2*(( precision_score * recall_score)/( precision_score + recall_score))
+f1 =2*(( precision* recall)/( precision + recall))
 #-----------------------------#
 print('Accuracy:\t',accuracy*100,
     '\nPrecision:\t',precision*100,
